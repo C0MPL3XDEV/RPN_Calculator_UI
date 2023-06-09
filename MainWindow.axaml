@@ -1,0 +1,67 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="380" d:DesignHeight="480"
+        Width="380" Height="480"
+        x:Class="RPN_Calculator_UI.MainWindow"
+        CanResize="False"
+       Title="RPN Calculator UI">
+    <StackPanel>
+        <Grid Height="40" ColumnDefinitions="Auto, Auto, *, Auto, Auto">
+            <TextBlock Grid.Column="0" FontSize="18" Margin="130,10,10,10">RPN Calculator</TextBlock>
+        </Grid>
+        <Grid Height="80" ColumnDefinitions="Auto, Auto, *, Auto">
+            <TextBox Grid.Column="0" Height="40" Width="350" Margin="15,10,10,10" TextAlignment="Right"></TextBox>
+        </Grid>
+        <Grid Height="380" Margin="0,-20,0,0" ColumnDefinitions="Auto, Auto, *, Auto, *">
+            <Button
+                Grid.Column="0" Content="%" Width="70" Height="40" HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center" Margin="20.5,-250,20, 20"
+                    ></Button>
+            <Button 
+                Grid.Column="1" Content="CE" Width="70" Height="40" HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center" Margin="-10, -250, 20, 20"
+                    ></Button>
+            <Button Grid.Column="2" Content="C" Width="70" Height="40"
+                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                    Margin="-10, -250, 20,20"
+                    ></Button>
+            <Button Grid.Column="3" Content="-/+" Width="100" Height="40" Margin="30, -250, 0,20"></Button>
+            <Button Grid.Column="0" Content="7" Width="70" Height="40" Margin="20.5, -140, 20,20"></Button>
+            <Button Grid.Column="1" Content="8" Width="70" Height="40" Margin="-10.5, -140, 20,20"></Button>
+            <Button Grid.Column="2" Content="9" Width="70" Height="40" Margin="-10.5, -140, 20,20"></Button>
+            <Button Grid.Column="3" Content="/" Width="100" Height="40" Margin="30, -140, 0, 20"></Button>
+            <Button Grid.Column="0" Content="4" Width="70" Height="40" Margin="20.5, -30, 20,20"></Button>
+            <Button Grid.Column="1" Content="5" Width="70" Height="40" Margin="-10.5, -30, 20, 20"></Button>
+            <Button Grid.Column="2" Content="6" Width="70" Height="40" Margin="-10.5, -30, 20,20"></Button>
+            <Button Grid.Column="3" Content="X" Width="100" Height="40" Margin="30.5, -30, 0,20"></Button>
+            <Button Grid.Column="0" Content="1" Width="70" Height="40" Margin="20.5, 80, 20, 20"></Button>
+            <Button Grid.Column="1" Content="2" Width="70" Height="40" Margin="-10.5, 80, 20,20"></Button>
+            <Button Grid.Column="2" Content="3" Width="70" Height="40" Margin="-10.5, 80, 20,20"></Button>
+            <Button Grid.Column="3" Content="-" Width="100" Height="40" Margin="30.5, 80, 0,20"></Button>
+            <Button Grid.Column="0" Content="." Width="70" Height="40" Margin="20.5, 190, 20,20"></Button>
+            <Button Grid.Column="1" Content="0" Width="70" Height="40" Margin="-10.5, 190, 20,20"></Button>
+            <Button Grid.Column="2" Content="+" Width="182" Height="40" Margin="-10.5, 190, 20,20"></Button>
+            <Button Grid.Column="0" Content="^" Width="70" Height="40" Margin="20.5, 300, 20,20"></Button>
+            <Button Grid.Column="1" Content="sqrt" Width="70" Height="40" Margin="-10.5,300,20,20"></Button>
+            <Button Grid.Column="2" Content="=" Width="182" Height="40" Margin="-10.5,300,20,20"
+                    Background="#f07900" Foreground="Black"></Button>
+            <Grid.Styles>
+                <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                    <Setter Property="Background" Value="#0f0f0f"></Setter>
+                    <Setter Property="TextBlock.Foreground" Value="#fff"></Setter>
+                </Style>
+                <Style Selector="Button">
+                    <Setter Property="Background" Value="#171717"></Setter>
+                    <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                    <Setter Property="Foreground" Value="#fff"></Setter>
+                    <Setter Property="CornerRadius" Value="45"></Setter>
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                    <Setter Property="FontSize" Value="22"></Setter>
+                </Style>
+            </Grid.Styles>
+        </Grid>
+    </StackPanel>
+</Window>
