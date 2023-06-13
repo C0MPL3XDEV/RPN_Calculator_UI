@@ -101,7 +101,7 @@ namespace RPN_Calculator_UI;
             TextBox1.Text = TextBox1.Text + "%";
         }
 
-        public void ButtoMultiplication_Click(object sender, RoutedEventArgs e)
+        public void ButtonMultiplication_Click(object sender, RoutedEventArgs e)
         {
             TextBox1.Text = TextBox1.Text + "*";
         }
