@@ -9,43 +9,96 @@
        Title="RPN Calculator UI">
     <StackPanel>
         <Grid Height="40" ColumnDefinitions="Auto, Auto, *, Auto, Auto">
-            <TextBlock Grid.Column="0" FontSize="18" Margin="130,10,10,10">RPN Calculator</TextBlock>
+            <TextBlock Grid.Column="0" Margin="120,10,10,10">RPN Calculator</TextBlock>
+            <Grid.Styles>
+                <Style Selector="TextBlock">
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                    <Setter Property="FontSize" Value="22"></Setter>
+                </Style>
+            </Grid.Styles>
         </Grid>
         <Grid Height="80" ColumnDefinitions="Auto, Auto, *, Auto">
-            <TextBox Grid.Column="0" Height="40" Width="350" Margin="15,10,10,10" TextAlignment="Right"></TextBox>
+            <TextBox Grid.Column="0" x:Name="TextBox1" Text="" Height="40" Width="350" Margin="15,10,10,10" TextAlignment="Right"
+                     ></TextBox>
+            <Grid.Styles>
+                <Style Selector="TextBox">
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                    <Setter Property="FontSize" Value="22"></Setter>
+                    <Setter Property="BorderThickness" Value="0"></Setter>
+                </Style>
+            </Grid.Styles>
         </Grid>
         <Grid Height="380" Margin="0,-20,0,0" ColumnDefinitions="Auto, Auto, *, Auto, *">
             <Button
                 Grid.Column="0" Content="%" Width="70" Height="40" HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center" Margin="20.5,-250,20, 20"
+                Click="ButtonModule_Click"
                     ></Button>
             <Button 
-                Grid.Column="1" Content="CE" Width="70" Height="40" HorizontalContentAlignment="Center"
+                Grid.Column="1" Content="C" Width="70" Height="40" HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center" Margin="-10, -250, 20, 20"
+                Click="ButtonClear_Click"
                     ></Button>
-            <Button Grid.Column="2" Content="C" Width="70" Height="40"
+            <Button Grid.Column="2" Content="CE" Width="70" Height="40"
                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                     Margin="-10, -250, 20,20"
+                    Click="ButtonCancel_Click"
                     ></Button>
-            <Button Grid.Column="3" Content="-/+" Width="100" Height="40" Margin="30, -250, 0,20"></Button>
-            <Button Grid.Column="0" Content="7" Width="70" Height="40" Margin="20.5, -140, 20,20"></Button>
-            <Button Grid.Column="1" Content="8" Width="70" Height="40" Margin="-10.5, -140, 20,20"></Button>
-            <Button Grid.Column="2" Content="9" Width="70" Height="40" Margin="-10.5, -140, 20,20"></Button>
-            <Button Grid.Column="3" Content="/" Width="100" Height="40" Margin="30, -140, 0, 20"></Button>
-            <Button Grid.Column="0" Content="4" Width="70" Height="40" Margin="20.5, -30, 20,20"></Button>
-            <Button Grid.Column="1" Content="5" Width="70" Height="40" Margin="-10.5, -30, 20, 20"></Button>
-            <Button Grid.Column="2" Content="6" Width="70" Height="40" Margin="-10.5, -30, 20,20"></Button>
-            <Button Grid.Column="3" Content="X" Width="100" Height="40" Margin="30.5, -30, 0,20"></Button>
-            <Button Grid.Column="0" Content="1" Width="70" Height="40" Margin="20.5, 80, 20, 20"></Button>
-            <Button Grid.Column="1" Content="2" Width="70" Height="40" Margin="-10.5, 80, 20,20"></Button>
-            <Button Grid.Column="2" Content="3" Width="70" Height="40" Margin="-10.5, 80, 20,20"></Button>
-            <Button Grid.Column="3" Content="-" Width="100" Height="40" Margin="30.5, 80, 0,20"></Button>
-            <Button Grid.Column="0" Content="." Width="70" Height="40" Margin="20.5, 190, 20,20"></Button>
-            <Button Grid.Column="1" Content="0" Width="70" Height="40" Margin="-10.5, 190, 20,20"></Button>
-            <Button Grid.Column="2" Content="+" Width="182" Height="40" Margin="-10.5, 190, 20,20"></Button>
-            <Button Grid.Column="0" Content="^" Width="70" Height="40" Margin="20.5, 300, 20,20"></Button>
-            <Button Grid.Column="1" Content="sqrt" Width="70" Height="40" Margin="-10.5,300,20,20"></Button>
+            <Button Grid.Column="3" Content="SPACE" Width="100" Height="40" Margin="30, -250, 0,20"
+                    Click="SpaceButton_Click"
+            ></Button>
+            <Button 
+                Grid.Column="0" Content="7" Width="70" Height="40" Margin="20.5, -140, 20,20"
+                Click="ButtonSeven_Click"
+            ></Button>
+            <Button Grid.Column="1" Content="8" Width="70" Height="40" Margin="-10.5, -140, 20,20"
+                    Click="ButtonEight_Click"
+                    ></Button>
+            <Button Grid.Column="2" Content="9" Width="70" Height="40" Margin="-10.5, -140, 20,20"
+                    Click="ButtonNine_Click"
+                    ></Button>
+            <Button Grid.Column="3" Content="/" Width="100" Height="40" Margin="30, -140, 0, 20"
+                    Click="ButtonDivide_Click"
+                    ></Button>
+            <Button Grid.Column="0" Content="4" Width="70" Height="40" Margin="20.5, -30, 20,20"
+                    Click="ButtonFour_Click"
+                    ></Button>
+            <Button Grid.Column="1" Content="5" Width="70" Height="40" Margin="-10.5, -30, 20, 20"
+                    Click="ButtonFive_Click"
+                    ></Button>
+            <Button Grid.Column="2" Content="6" Width="70" Height="40" Margin="-10.5, -30, 20,20"
+                    Click="ButtonSix_Click"
+                    ></Button>
+            <Button Grid.Column="3" Content="x" Width="100" Height="40" Margin="30.5, -30, 0,20"></Button>
+            <Button Grid.Column="0" Content="1" Width="70" Height="40" Margin="20.5, 80, 20, 20"
+                    Click="ButtonOne_Click"
+                    ></Button>
+            <Button Grid.Column="1" Content="2" Width="70" Height="40" Margin="-10.5, 80, 20,20"
+                    Click="ButtonTwo_Click"
+                    ></Button>
+            <Button Grid.Column="2" Content="3" Width="70" Height="40" Margin="-10.5, 80, 20,20"
+                    Click="ButtonThree_Click"
+                    ></Button>
+            <Button Grid.Column="3" Content="-" Width="100" Height="40" Margin="30.5, 80, 0,20"
+                    Click="ButtonSub_Click"
+                    ></Button>
+            <Button Grid.Column="0" Content="." Width="70" Height="40" Margin="20.5, 190, 20,20"
+                    Click="ButtonDot_Click"
+                    ></Button>
+            <Button Grid.Column="1" Content="0" Width="70" Height="40" Margin="-10.5, 190, 20,20"
+                    Click="ButtonZero_Click"
+                    ></Button>
+            <Button Grid.Column="2" Content="+" Width="182" Height="40" Margin="-10.5, 190, 20,20"
+                    Click="ButtonSum_Click"
+                    ></Button>
+            <Button Grid.Column="0" Content="^" Width="70" Height="40" Margin="20.5, 300, 20,20"
+                    Click="ButtonPow_Click"
+                    ></Button>
+            <Button Grid.Column="1" Content="sqrt" Width="70" Height="40" Margin="-10.5,300,20,20"
+                    Click="ButtonSqrt_Click"
+                    ></Button>
             <Button Grid.Column="2" Content="=" Width="182" Height="40" Margin="-10.5,300,20,20"
+                    Click="ButtonResult_Click"
                     Background="#f07900" Foreground="Black"></Button>
             <Grid.Styles>
                 <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">

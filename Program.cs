@@ -1,6 +1,5 @@
 ﻿using Avalonia;
 using System;
-
 namespace RPN_Calculator_UI;
 
 class Program
@@ -17,4 +16,6 @@ class Program
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .LogToTrace();
+    
+            
 }
